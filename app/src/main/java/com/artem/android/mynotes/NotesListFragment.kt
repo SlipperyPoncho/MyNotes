@@ -106,13 +106,8 @@ class NotesListFragment: Fragment() {
 
         fun bind(note: Note) {
             this.note = note
-            val title = if (this.note.title.length > 8) this.note.title.substring(0,7) + "..."
-            else this.note.title
-            val text = if (this.note.text.length > 9) this.note.text.substring(0,9) + "..."
-            else this.note.text
-
-            titleTextView.text = title
-            noteTextView.text = text
+            titleTextView.text = this.note.title
+            noteTextView.text = this.note.text
         }
 
         override fun onClick(v: View?) {

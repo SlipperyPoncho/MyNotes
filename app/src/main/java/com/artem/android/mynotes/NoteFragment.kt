@@ -12,6 +12,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -34,7 +35,16 @@ class NoteFragment: Fragment() {
         note = Note()
         val noteId: UUID = arguments?.getSerializable(ARG_NOTE_ID) as UUID
         noteViewModel.loadNote(noteId)
+
+
+        requireActivity().onBackPressedDispatcher.addCallback(object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                //Логика удаления
+            }
+        })
     }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,

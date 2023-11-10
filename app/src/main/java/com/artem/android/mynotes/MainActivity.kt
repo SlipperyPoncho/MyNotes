@@ -2,6 +2,7 @@ package com.artem.android.mynotes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import java.util.UUID
 
 class MainActivity : AppCompatActivity(), NotesListFragment.Callbacks {
